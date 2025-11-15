@@ -1,10 +1,17 @@
+import salon1 from "../assets/images/salon1.png";
+import salon2 from "../assets/images/salon2.png";
+import salon3 from "../assets/images/salon3.png";
+import salon4 from "../assets/images/salon4.png";
+import salon5 from "../assets/images/salon5.png";
+import salon6 from "../assets/images/salon6.png";
+
 const salons = [
   {
     id: 1,
     name: "Beauty Salon Lux",
     city: "București",
     description: "Servicii premium de coafură și manichiură",
-    image: "https://via.placeholder.com/300x200",
+    image: salon1,
     rating: 4.5,
   },
   {
@@ -12,7 +19,7 @@ const salons = [
     name: "Relax Spa",
     city: "Cluj-Napoca",
     description: "Spa și masaj relaxant",
-    image: "https://via.placeholder.com/300x200",
+    image: salon2,
     rating: 4.8,
   },
   {
@@ -20,7 +27,7 @@ const salons = [
     name: "Hair & Style",
     city: "București",
     description: "Tunsori moderne și vopsit",
-    image: "https://via.placeholder.com/300x200",
+    image: salon3,
     rating: 4.2,
   },
   {
@@ -28,9 +35,25 @@ const salons = [
     name: "Wellness Center",
     city: "Timișoara",
     description: "Masaj, saună și tratamente faciale",
-    image: "https://via.placeholder.com/300x200",
+    image: salon4,
     rating: 4.7,
   },
+  {
+    id: 5,
+    name: "Glam Nails Studio",
+    city: "Iași",
+    description: "Manichiură, pedichiură și nail art profesional",
+    image: salon5,
+    rating: 4.6,
+  },
+  {
+    id: 6,
+    name: "Barber Pro",
+    city: "Brașov",
+    description: "Tunsori bărbătești moderne și bărbierit tradițional",
+    image: salon6,
+    rating: 4.9,
+  }
 ];
 
 export default salons;
