@@ -1,18 +1,18 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
-import Home from "./pages/Home";
-import Account from "./pages/Account";
+import Saloane from "./pages/Saloane";
+import Rezervari from "./pages/Rezervari";
+import Despre from "./pages/Despre";
 
 export default function App() {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cont" element={<Account />} />
-        {/* Poți adăuga alte pagini mai târziu */}
+        <Route path="/" element={<Saloane />} />
+        <Route path="/rezervari" element={<Rezervari />} />  
+        <Route path="/despre" element={<Despre />} />
       </Routes>
     </Router>
   );
