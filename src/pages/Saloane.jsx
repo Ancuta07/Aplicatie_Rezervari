@@ -5,18 +5,27 @@ import ReservationModal from "../components/ReservationModal";
 
 export default function Home() {
   const [selectedSalon, setSelectedSalon] = useState(null);
-  const [search, setSearch] = useState(""); // căutare după nume
-  const [selectedCity, setSelectedCity] = useState(""); // filtrare după oraș
 
-  // lista orașelor unice pentru dropdown
+  // Căutări & filtre
+  const [search, setSearch] = useState(""); // după nume
+  const [service, setService] = useState(""); // după serviciu
+  const [selectedCity, setSelectedCity] = useState(""); // după oraș
+
+  // orașe unice
   const cities = Array.from(new Set(salons.map((s) => s.city)));
 
-  // filtrează saloanele după oraș și căutare
+  // FILTRARE COMPLETĂ
   const filteredSalons = salons.filter((s) => {
-    return (
-      (selectedCity === "" || s.city === selectedCity) &&
-      s.name.toLowerCase().includes(search.toLowerCase())
-    );
+    const matchName = s.name.toLowerCase().includes(search.toLowerCase());
+    const matchCity = selectedCity === "" || s.city === selectedCity;
+
+    const matchService =
+      service === "" ||
+      s.services.some((srv) =>
+        srv.toLowerCase().includes(service.toLowerCase())
+      );
+
+    return matchName && matchCity && matchService;
   });
 
   return (
@@ -25,19 +34,31 @@ export default function Home() {
         Saloane disponibile
       </h1>
 
-      {/* Filtru oraș și căutare */}
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
+      {/* FILTRE: nume + oraș + serviciu */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {/* Caută după nume */}
         <input
           type="text"
           placeholder="Caută după nume..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border border-gray-300 rounded px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+
+        {/* Caută după serviciu */}
+        <input
+          type="text"
+          placeholder="Caută un serviciu: tuns, masaj, manichiură..."
+          value={service}
+          onChange={(e) => setService(e.target.value)}
+          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
+        {/* Select oraș */}
         <select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Toate orașele</option>
           {cities.map((city) => (
