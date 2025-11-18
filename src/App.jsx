@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./components/layout/Header";
 import Saloane from "./pages/Saloane";
 import Rezervari from "./pages/Rezervari";
@@ -11,11 +12,13 @@ export default function App() {
     <Router>
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Saloane />} />
-        <Route path="/rezervari" element={<Rezervari />} />
-        <Route path="/despre" element={<Despre />} />
-      </Routes>
+      <div className="app-content">
+        <Routes>
+          <Route path="/" element={<Saloane />} />
+          <Route path="/rezervari" element={<Rezervari />} />
+          <Route path="/despre" element={<Despre />} />
+        </Routes>
+      </div>
 
       <Footer />
     </Router>
