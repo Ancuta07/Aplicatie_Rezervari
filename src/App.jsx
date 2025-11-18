@@ -4,16 +4,20 @@ import Header from "./components/layout/Header";
 import Saloane from "./pages/Saloane";
 import Rezervari from "./pages/Rezervari";
 import Despre from "./pages/Despre";
+import Footer from "./components/layout/Footer";
 
 export default function App() {
   return (
     <Router>
       <Header />
+
       <Routes>
         <Route path="/" element={<Saloane />} />
-        <Route path="/rezervari" element={<Rezervari />} />  
+        <Route path="/rezervari" element={<Rezervari />} />
         <Route path="/despre" element={<Despre />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }
