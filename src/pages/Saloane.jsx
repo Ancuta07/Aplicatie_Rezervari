@@ -3,8 +3,9 @@ import salons from "../data/salons";
 import SalonCard from "../components/SalonCard";
 import ReservationModal from "../components/ReservationModal";
 
-export default function Home() {
+export default function Saloane() {
   const [selectedSalon, setSelectedSalon] = useState(null);
+<<<<<<< HEAD
 
   // Căutări & filtre
   const [search, setSearch] = useState(""); // după nume
@@ -15,6 +16,13 @@ export default function Home() {
   const cities = Array.from(new Set(salons.map((s) => s.city)));
 
   // FILTRARE COMPLETĂ
+=======
+  const [search, setSearch] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+
+  const cities = Array.from(new Set(salons.map((s) => s.city)));
+
+>>>>>>> 83133ed0488a19f700d435ab81d7e8487a272fed
   const filteredSalons = salons.filter((s) => {
     const matchName = s.name.toLowerCase().includes(search.toLowerCase());
     const matchCity = selectedCity === "" || s.city === selectedCity;
@@ -29,19 +37,22 @@ export default function Home() {
   });
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-blue-600">
-        Saloane disponibile
-      </h1>
+    <div className="page-container">
+      <h1 className="title-page">Saloane disponibile</h1>
 
+<<<<<<< HEAD
       {/* FILTRE: nume + oraș + serviciu */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {/* Caută după nume */}
+=======
+      <div className="filters-container">
+>>>>>>> 83133ed0488a19f700d435ab81d7e8487a272fed
         <input
           type="text"
           placeholder="Caută după nume..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+<<<<<<< HEAD
           className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
@@ -59,6 +70,15 @@ export default function Home() {
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
           className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+=======
+          className="search-input"
+        />
+
+        <select
+          value={selectedCity}
+          onChange={(e) => setSelectedCity(e.target.value)}
+          className="city-select"
+>>>>>>> 83133ed0488a19f700d435ab81d7e8487a272fed
         >
           <option value="">Toate orașele</option>
           {cities.map((city) => (
@@ -69,13 +89,12 @@ export default function Home() {
         </select>
       </div>
 
-      {/* Lista saloanelor */}
       {filteredSalons.length === 0 ? (
-        <p className="text-gray-600">
+        <p className="empty-message">
           Nu există saloane care să corespundă filtrului.
         </p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="salon-grid">
           {filteredSalons.map((salon) => (
             <SalonCard
               key={salon.id}
@@ -86,7 +105,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Modal rezervare */}
       <ReservationModal
         salon={selectedSalon}
         onClose={() => setSelectedSalon(null)}

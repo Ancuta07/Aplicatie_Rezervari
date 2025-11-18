@@ -1,4 +1,470 @@
-/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ------------------------------------- */
+/* --------- SALOANE PAGE -------------- */
+/* ------------------------------------- */
+
+.page-container {
+  padding: 2rem; /* p-8 */
+  background-color: #f9fafb; /* bg-gray-50 */
+  min-height: 100vh; /* min-h-screen */
+}
+
+.title-page {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.filters-container {
+  display: flex;
+  justify-content: flex-end; /* mută în dreapta */
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .filters-container {
+    flex-direction: row;
+  }
+}
+
+.search-input {
+  width: 60%;
+  max-width: 300px;
+  margin-right: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.city-select {
+  width: 30%;
+  max-width: 150px;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.search-input:focus,
+.city-select:focus {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+
+.empty-message,
+.rez-empty-text {
+  color: #4b5563; /* text-gray-600 */
+}
+
+.salon-grid,
+.rez-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) {
+  .salon-grid,
+  .rez-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .salon-grid,
+  .rez-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ------------------------------------- */
+/* ---------- REZERVARI PAGE ----------- */
+/* ------------------------------------- */
+
+.rez-page-container {
+  padding: 2rem; /* p-8 */
+  background-color: #f9fafb; /* bg-gray-50 */
+  min-height: 100vh; /* min-h-screen */
+}
+
+.rez-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.rez-card {
+  background-color: white; /* bg-white */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  padding: 1rem; /* p-4 */
+}
+
+.rez-card-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.rez-card-city {
+  color: #6b7280; /* text-gray-500 */
+}
+
+.rez-card-date,
+.rez-card-time {
+  color: #4b5563; /* text-gray-600 */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+/* ------------------------------------- */
+/* ------------- DESPRE PAGE ----------- */
+/* ------------------------------------- */
+
+.despre-container {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.despre-title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.despre-intro {
+  color: #374151; /* text-gray-700 */
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem; /* leading-relaxed */
+  margin-bottom: 1.5rem;
+}
+
+.despre-box {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.despre-subtitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600;
+  color: #3b82f6; /* text-blue-500 */
+  margin-bottom: 1rem;
+}
+
+.despre-text {
+  color: #374151;
+  line-height: 1.75rem;
+}
+
+.mt-extra {
+  margin-top: 0.75rem;
+}
+
+.despre-tech-box {
+  background-color: #eff6ff; /* bg-blue-50 */
+  border-left: 0.25rem solid #3b82f6; /* border-l-4 border-blue-500 */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.despre-tech-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e40af; /* text-blue-700 */
+  margin-bottom: 0.5rem;
+}
+
+.despre-tech-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: #374151;
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+.despre-footer {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem; /* text-sm */
+  margin-top: 2rem;
+}
+
+/* ------------------------------------- */
+/* ------------ SALON CARD ------------- */
+/* ------------------------------------- */
+
+.salon-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.salon-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.salon-card-img {
+  width: 100%;
+  height: 12rem; /* h-48 */
+  object-fit: cover;
+}
+
+.salon-card-content {
+  padding: 1rem;
+}
+
+.salon-card-title {
+  font-weight: 800; /* puțin mai îngroșat decât bold */
+  color: #2563eb; /* albastru */
+}
+
+.salon-card-description {
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+.salon-card-city {
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.salon-card-rating {
+  font-weight: 700;
+  color: #fbbf24; /* galben */
+}
+
+.salon-card-btn {
+  margin-top: 0.75rem;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.salon-card-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ------------------------------------- */
+/* --------------- HEADER -------------- */
+/* ------------------------------------- */
+
+.header-container {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.header-link {
+  text-decoration: none; /* elimină underline */
+  font-weight: 500; /* păstrează o greutate moderată */
+}
+
+.header-link:hover {
+  color: #3b82f6;
+}
+
+/* ------------------------------------- */
+/* --------------- FOOTER -------------- */
+/* ------------------------------------- */
+
+.footer-container {
+  background-color: #f3f4f6;
+  border-top: 1px solid #d1d5db;
+  padding: 0.75rem 1.25rem;
+}
+
+.footer-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #4b5563;
+}
+
+/* ------------------------------------- */
+/* ----------- RESERVATION MODAL ------- */
+/* ------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: opacity 0.3s;
+}
+
+.modal-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  width: 20rem;
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
+.modal-scale-in {
+  transform: scale(1);
+}
+
+.modal-scale-out {
+  transform: scale(0.9);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-label {
+  display: block;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.modal-input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.modal-input:focus {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-cancel:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-confirm {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-confirm:hover {
+  background-color: #2563eb;
+}
+
+.modal-confirm-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.modal-check {
+  width: 3rem;
+  height: 3rem;
+  color: #22c55e; /* text-green-500 */
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+}
+
+.modal-confirm-text {
+  color: #16a34a; /* text-green-600 */
+  font-weight: 700;
+  font-size: 1.125rem; /* text-lg */
+}
+
+/* ------------------------------------- */
+/* ------------- GENERAL LAYOUT -------- */
+/* ------------------------------------- */
+
+.app-content {
+  min-height: 100vh;
+}
+
+/* Animation @keyframes for bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1rem);
+  }
+}
