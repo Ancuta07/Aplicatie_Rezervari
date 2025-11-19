@@ -389,6 +389,10 @@
   outline: none;
   transition: box-shadow 0.2s ease-in-out;
 }
+.modal-input {
+  width: 100%;
+  min-width: 100%; /* 👈 face dropdown-ul la fel de lung ca inputurile */
+}
 
 .modal-input:focus {
   box-shadow: 0 0 0 2px #3b82f6;
@@ -467,4 +471,163 @@
   50% {
     transform: translateY(-1rem);
   }
+}
+.despre-benefits-box {
+  background-color: #eff6ff; 
+  border-left: 4px solid #3b82f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.despre-benefits-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.despre-benefits-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  line-height: 1.75rem;
+  color: #374151;
+}
+
+.despre-benefits-list li strong {
+  color: #1d4ed8;
+}
+
+/* ---- NEW MODERN MODAL STYLE ---- */
+
+.modal-content-modern {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 2rem;
+  width: 32rem;              /* 👉 mai mare decât înainte */
+  max-width: 90vw;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transform-origin: center;
+  transition: 0.3s ease;
+}
+
+.modal-pop-in {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-pop-out {
+  transform: scale(0.85);
+  opacity: 0;
+}
+
+
+.modal-title-modern {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-title-modern span {
+  color: #1e3a8a;
+}
+
+.modal-field {
+  margin-bottom: 1rem;
+}
+
+.modal-label-modern {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.modal-input-modern {
+  width: 100%;               /* 👉 ocupă toată lățimea cardului */
+  box-sizing: border-box;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.6rem;
+  outline: none;
+  font-size: 0.95rem;
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s;
+}
+
+.modal-input-modern:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+/* Buttons */
+.modal-buttons-new {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.btn-cancel-new {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-cancel-new:hover {
+  background: #f3f4f6;
+}
+
+.btn-confirm-new {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-confirm-new:hover {
+  background: #1d4ed8;
+}
+
+/* Confirm screen */
+.modal-confirm-wrapper-new {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.checkmark-circle {
+  width: 70px;
+  height: 70px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  animation: popIn 0.4s ease;
+}
+
+.checkmark {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.confirm-message {
+  font-size: 1.2rem;
+  color: #16a34a;
+  font-weight: 700;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }

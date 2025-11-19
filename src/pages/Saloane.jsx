@@ -7,23 +7,25 @@ export default function Saloane() {
   const [selectedSalon, setSelectedSalon] = useState(null);
 
   // Căutări & filtre
-  const [search, setSearch] = useState(""); // după nume
-  const [service, setService] = useState(""); // după serviciu
-  const [selectedCity, setSelectedCity] = useState(""); // după oraș
+  const [search, setSearch] = useState("");
+  const [service, setService] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
 
-  // orașe unice
-  const cities = Array.from(new Set(salons.map((s) => s.city)));
+  const cities = Array.from(new Set(salons.flatMap((s) => s.city)));
 
-  // FILTRARE COMPLETĂ
+
   const filteredSalons = salons.filter((s) => {
     const matchName = s.name.toLowerCase().includes(search.toLowerCase());
-    const matchCity = selectedCity === "" || s.city === selectedCity;
+   const matchCity =
+   selectedCity === "" || s.city.includes(selectedCity);
+
 
     const matchService =
       service === "" ||
-      s.services.some((srv) =>
-        srv.toLowerCase().includes(service.toLowerCase())
-      );
+      (s.services &&
+        s.services.some((srv) =>
+          srv.toLowerCase().includes(service.toLowerCase())
+        ));
 
     return matchName && matchCity && matchService;
   });
@@ -32,31 +34,28 @@ export default function Saloane() {
     <div className="page-container">
       <h1 className="title-page">Saloane disponibile</h1>
 
-      {/* FILTRE: nume + oraș + serviciu */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {/* Caută după nume */}
+      {/* FILTRE — Fără Tailwind, doar CSS-ul tău */}
+      <div className="filters-container">
         <input
           type="text"
           placeholder="Caută după nume..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="search-input"
         />
 
-        {/* Caută după serviciu */}
         <input
           type="text"
           placeholder="Caută un serviciu: tuns, masaj, manichiură..."
           value={service}
           onChange={(e) => setService(e.target.value)}
-          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="search-input"
         />
 
-        {/* Select oraș */}
         <select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="city-select"
         >
           <option value="">Toate orașele</option>
           {cities.map((city) => (
@@ -75,10 +74,12 @@ export default function Saloane() {
         <div className="salon-grid">
           {filteredSalons.map((salon) => (
             <SalonCard
-              key={salon.id}
-              salon={salon}
-              onReserve={setSelectedSalon}
+             key={salon.id}
+             salon={salon}
+             selectedCity={selectedCity}   // trimitem orasul selectat
+             onReserve={setSelectedSalon}
             />
+
           ))}
         </div>
       )}
