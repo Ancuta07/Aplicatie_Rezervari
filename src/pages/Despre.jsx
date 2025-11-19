@@ -6,48 +6,52 @@ export default function Despre() {
       <h1 className="despre-title">Despre SalonFinder</h1>
 
       <p className="despre-intro">
-        SalonFinder este o aplicație realizată ca proiect personal de facultate,
-        creată cu scopul de a oferi o experiență modernă și intuitivă pentru
-        rezervări la saloane de înfrumusețare. Platforma permite utilizatorilor
-        să exploreze saloane, să vadă imagini reale, să filtreze după oraș și
-        să rezerve rapid serviciile dorite.
+        SalonFinder este o aplicație modernă creată pentru a simplifica procesul
+        de rezervare la saloanele de înfrumusețare. Indiferent că ai nevoie de un
+        tuns, un masaj, un tratament facial sau o programare rapidă la manichiură,
+        platforma îți oferă acces instant la cele mai bune saloane din orașul tău.
       </p>
 
       <div className="despre-box">
-        <h2 className="despre-subtitle">Scopul aplicației</h2>
+        <h2 className="despre-subtitle">Ce oferă aplicația?</h2>
+
         <p className="despre-text">
-          Ideea din spatele SalonFinder este simplă: să creeze un loc în care
-          utilizatorii pot găsi rapid saloane de calitate și pot face o
-          rezervare în doar câteva secunde. Ne-am dorit ca această aplicație să
-          fie ușor de folosit, rapidă și vizual plăcută, atât pentru utilizatori,
-          cât și pentru saloane.
+          ✔️ O listă selectată de saloane cu imagini reale și informații clare. <br />
+          ✔️ Filtre rapide după nume, oraș și servicii. <br />
+          ✔️ Rezervări intuitive în câteva secunde. <br />
+          ✔️ O experiență modernă, rapidă și plăcută.
         </p>
       </div>
 
       <div className="despre-box">
-        <h2 className="despre-subtitle">Cine a realizat aplicația?</h2>
+        <h2 className="despre-subtitle">De ce este o alegere excelentă?</h2>
+
         <p className="despre-text">
-          Aplicația a fost dezvoltată de o echipă formată din trei studente pasionate
-          de tehnologie și design. Am colaborat la realizarea paginilor, componentelor,
-          funcționalităților și aspectului general al platformei.
+          SalonFinder elimină telefoanele, căutările lungi și programările dificile.
+          Totul este centralizat într-un singur loc: servicii, imagini, ratinguri și disponibilitate.
+          În loc să cauți prin zeci de pagini sau site-uri, găsești totul în câteva secunde —
+          iar rezervarea se face cu un singur click.
         </p>
+
         <p className="despre-text mt-extra">
-          Acest proiect reprezintă atât o aplicație utilă, cât și o demonstrație a
-          cunoștințelor noastre în dezvoltarea web folosind React și Tailwind CSS.
+          Scopul aplicației este să aducă simplitate acolo unde era nevoie: în programările
+          la salon. Rapid, eficient și accesibil oricui.
         </p>
       </div>
 
-      <div className="despre-tech-box">
-        <h2 className="despre-tech-title">Tehnologii folosite</h2>
-        <ul className="despre-tech-list">
-          <li>React.js</li>
-          <li>React Router</li>
-          <li>Tailwind CSS</li>
-          <li>Context API (gestionarea rezervărilor)</li>
+      {/* ----- SECTIUNEA NOUĂ ----- */}
+      <div className="despre-benefits-box">
+        <h2 className="despre-benefits-title">De ce să folosești SalonFinder? ✨</h2>
+
+        <ul className="despre-benefits-list">
+          <li>💇‍♀️ <strong>Găsești rapid saloane de top</strong> – totul într-un singur loc.</li>
+          <li>📍 <strong>Filtrare după oraș și servicii</strong> – vezi doar ce te interesează.</li>
+          <li>🖼️ <strong>Prezentare vizuală clară</strong> – imagini reale și ratinguri actualizate.</li>
+          <li>⚡ <strong>Rezervare în câteva secunde</strong> – fără așteptări sau telefoane.</li>
+          <li>⭐ <strong>Experiență modernă și intuitivă</strong> – rapidă și fluidă.</li>
+          <li>❤️ <strong>Ideal pentru persoane ocupate</strong> – economisești timp prețios.</li>
         </ul>
       </div>
-
-      
     </div>
   );
 }

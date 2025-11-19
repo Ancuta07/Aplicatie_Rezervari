@@ -4,14 +4,19 @@ import { useReservations } from "../context/ReservationContext";
 export default function ReservationModal({ salon, onClose }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+
   const [showModal, setShowModal] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+
   const { addReservation } = useReservations();
 
+  // Când se deschide modalul
   useEffect(() => {
     if (salon) {
       setShowModal(true);
       setConfirmed(false);
+      setSelectedCity(""); // resetare oraș
     } else {
       setShowModal(false);
     }
@@ -21,11 +26,11 @@ export default function ReservationModal({ salon, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     addReservation({
       salonId: salon.id,
       name: salon.name,
-      city: salon.city,
+      city: selectedCity,
       date,
       time,
     });
@@ -39,70 +44,78 @@ export default function ReservationModal({ salon, onClose }) {
 
   return (
     <div
-      className={`modal-overlay ${
-        showModal ? "modal-visible" : "modal-hidden"
-      }`}
+      className={`modal-overlay ${showModal ? "modal-visible" : "modal-hidden"}`}
     >
       <div
-        className={`modal-content ${
-          showModal ? "modal-scale-in" : "modal-scale-out"
+        className={`modal-content-modern ${
+          showModal ? "modal-pop-in" : "modal-pop-out"
         }`}
       >
         {!confirmed ? (
           <>
-            <h2 className="modal-title">Rezervare: {salon.name}</h2>
+            <h2 className="modal-title-modern">
+              Rezervare la <span>{salon.name}</span>
+            </h2>
 
-            <form onSubmit={handleSubmit} className="modal-form">
-              <div>
-                <label className="modal-label">Data:</label>
-                <input
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  required
-                  className="modal-input"
-                />
-              </div>
+            {/* Select oraș */}
+            <div className="modal-field">
+              <label className="modal-label-modern">Alege orașul:</label>
+              <select
+                value={selectedCity}
+                onChange={(e) => setSelectedCity(e.target.value)}
+                required
+                className="modal-input-modern"
+              >
+                <option value="">Selectează orașul</option>
+                {salon.city.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-              <div>
-                <label className="modal-label">Ora:</label>
-                <input
-                  type="time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                  required
-                  className="modal-input"
-                />
-              </div>
+            {/* Data */}
+            <div className="modal-field">
+              <label className="modal-label-modern">Data:</label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+                className="modal-input-modern"
+              />
+            </div>
 
-              <div className="modal-buttons">
-                <button type="button" onClick={onClose} className="btn-cancel">
-                  Anulează
-                </button>
+            {/* Ora */}
+            <div className="modal-field">
+              <label className="modal-label-modern">Ora:</label>
+              <input
+                type="time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                required
+                className="modal-input-modern"
+              />
+            </div>
 
-                <button type="submit" className="btn-confirm">
-                  Confirmă
-                </button>
-              </div>
-            </form>
+            {/* Buttons */}
+            <div className="modal-buttons-new">
+              <button type="button" onClick={onClose} className="btn-cancel-new">
+                Anulează
+              </button>
+
+              <button type="submit" onClick={handleSubmit} className="btn-confirm-new">
+                Confirmă rezervarea
+              </button>
+            </div>
           </>
         ) : (
-          <div className="modal-confirm-wrapper">
-            <svg
-              className="modal-check"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 13l4 4L19 7"
-              ></path>
-            </svg>
-
-            <p className="modal-confirm-text">Rezervare confirmată!</p>
+          <div className="modal-confirm-wrapper-new">
+            <div className="checkmark-circle">
+              <span className="checkmark">✓</span>
+            </div>
+            <p className="confirm-message">Rezervarea a fost trimisă!</p>
           </div>
         )}
       </div>
