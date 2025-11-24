@@ -1,23 +1,37 @@
 /* ------------------------------------- */
+
 /* --------- SALOANE PAGE -------------- */
+
 /* ------------------------------------- */
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 .page-container {
-  padding: 2rem; /* p-8 */
-  background-color: #f9fafb; /* bg-gray-50 */
-  min-height: 100vh; /* min-h-screen */
+  padding: 2rem;
+  /* p-8 */
+  background-color: #ffc4c4;
+  /* bg-gray-50 */
+  min-height: 100vh;
+  /* min-h-screen */
 }
 
 .title-page {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 1.5rem; /* mb-6 */
-  color: #2563eb; /* text-blue-600 */
+  font-size: 1.875rem;
+  /* text-3xl */
+  font-weight: 700;
+  /* font-bold */
+  margin-bottom: 1.5rem;
+  /* mb-6 */
+  color: #850e35;
+  /* text-blue-600 */
 }
 
 .filters-container {
   display: flex;
-  justify-content: flex-end; /* mută în dreapta */
+  justify-content: flex-end;
+  /* mută în dreapta */
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -51,20 +65,21 @@
 
 .search-input:focus,
 .city-select:focus {
-  box-shadow: 0 0 0 2px #3b82f6;
+  box-shadow: 0 0 0 2px #ee6983;
 }
-
 
 .empty-message,
 .rez-empty-text {
-  color: #4b5563; /* text-gray-600 */
+  color: #4b5563;
+  /* text-gray-600 */
 }
 
 .salon-grid,
 .rez-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem; /* gap-6 */
+  gap: 1.5rem;
+  /* gap-6 */
 }
 
 @media (min-width: 768px) {
@@ -82,70 +97,96 @@
 }
 
 /* ------------------------------------- */
+
 /* ---------- REZERVARI PAGE ----------- */
+
 /* ------------------------------------- */
 
 .rez-page-container {
-  padding: 2rem; /* p-8 */
-  background-color: #f9fafb; /* bg-gray-50 */
-  min-height: 100vh; /* min-h-screen */
+  padding: 2rem;
+  /* p-8 */
+  background-color: #fcf5ee;
+  /* bg-gray-50 */
+  min-height: 100vh;
+  /* min-h-screen */
 }
 
 .rez-title {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 1.5rem; /* mb-6 */
-  color: #2563eb; /* text-blue-600 */
+  font-size: 1.875rem;
+  /* text-3xl */
+  font-weight: 700;
+  /* font-bold */
+  margin-bottom: 1.5rem;
+  /* mb-6 */
+  color: #ee6983;
+  /* text-blue-600 */
 }
 
 .rez-card {
-  background-color: white; /* bg-white */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
-  padding: 1rem; /* p-4 */
+  background-color: white;
+  /* bg-white */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* shadow-md */
+  padding: 1rem;
+  /* p-4 */
 }
 
 .rez-card-title {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 700; /* font-bold */
-  color: #2563eb; /* text-blue-600 */
+  font-size: 1.25rem;
+  /* text-xl */
+  font-weight: 700;
+  /* font-bold */
+  color: #850e35;
+  /* text-blue-600 */
 }
 
 .rez-card-city {
-  color: #6b7280; /* text-gray-500 */
+  color: #6b7280;
+  /* text-gray-500 */
 }
 
 .rez-card-date,
 .rez-card-time {
-  color: #4b5563; /* text-gray-600 */
-  margin-top: 0.25rem; /* mt-1 */
+  color: #4b5563;
+  /* text-gray-600 */
+  margin-top: 0.25rem;
+  /* mt-1 */
 }
 
 /* ------------------------------------- */
+
 /* ------------- DESPRE PAGE ----------- */
+
 /* ------------------------------------- */
 
 .despre-container {
   padding: 2rem;
   background-color: #f9fafb;
   min-height: 100vh;
-  max-width: 48rem; /* max-w-3xl */
+  max-width: 48rem;
+  /* max-w-3xl */
   margin-left: auto;
   margin-right: auto;
 }
 
 .despre-title {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 2.25rem;
+  /* text-4xl */
   font-weight: 700;
-  color: #2563eb;
+  color: #850e35;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .despre-intro {
-  color: #374151; /* text-gray-700 */
-  font-size: 1.125rem; /* text-lg */
-  line-height: 1.75rem; /* leading-relaxed */
+  color: #374151;
+  /* text-gray-700 */
+  font-size: 1.125rem;
+  /* text-lg */
+  line-height: 1.75rem;
+  /* leading-relaxed */
   margin-bottom: 1.5rem;
 }
 
@@ -158,9 +199,11 @@
 }
 
 .despre-subtitle {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem;
+  /* text-2xl */
   font-weight: 600;
-  color: #3b82f6; /* text-blue-500 */
+  color: #850e35;
+  /* text-blue-500 */
   margin-bottom: 1rem;
 }
 
@@ -174,8 +217,10 @@
 }
 
 .despre-tech-box {
-  background-color: #eff6ff; /* bg-blue-50 */
-  border-left: 0.25rem solid #3b82f6; /* border-l-4 border-blue-500 */
+  background-color: #eff6ff;
+  /* bg-blue-50 */
+  border-left: 0.25rem solid #850e35;
+  /* border-l-4 border-blue-500 */
   padding: 1.5rem;
   border-radius: 1rem;
   margin-bottom: 2.5rem;
@@ -184,7 +229,8 @@
 .despre-tech-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1e40af; /* text-blue-700 */
+  color: #850e35;
+  /* text-blue-700 */
   margin-bottom: 0.5rem;
 }
 
@@ -199,12 +245,15 @@
 .despre-footer {
   text-align: center;
   color: #6b7280;
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.875rem;
+  /* text-sm */
   margin-top: 2rem;
 }
 
 /* ------------------------------------- */
+
 /* ------------ SALON CARD ------------- */
+
 /* ------------------------------------- */
 
 .salon-card {
@@ -221,37 +270,42 @@
 
 .salon-card-img {
   width: 100%;
-  height: 12rem; /* h-48 */
+  height: 12rem;
+  /* h-48 */
   object-fit: cover;
 }
 
 .salon-card-content {
   padding: 1rem;
+  background-color: #fcf5ee;
 }
 
 .salon-card-title {
-  font-weight: 800; /* puțin mai îngroșat decât bold */
-  color: #2563eb; /* albastru */
+  font-weight: 800;
+  /* puțin mai îngroșat decât bold */
+  color: #850e35;
+  /* albastru */
 }
 
 .salon-card-description {
-  color: #4b5563;
+  color: #000;
   margin-top: 0.25rem;
 }
 
 .salon-card-city {
-  color: #6b7280;
+  color: #000;
   margin-top: 0.5rem;
 }
 
 .salon-card-rating {
   font-weight: 700;
-  color: #fbbf24; /* galben */
+  color: #850e35;
+  /* galben */
 }
 
 .salon-card-btn {
   margin-top: 0.75rem;
-  background-color: #3b82f6;
+  background-color: #ee6983;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -261,16 +315,18 @@
 }
 
 .salon-card-btn:hover {
-  background-color: #2563eb;
+  background-color: #850e35;
 }
 
 /* ------------------------------------- */
+
 /* --------------- HEADER -------------- */
+
 /* ------------------------------------- */
 
 .header-container {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: #ffc4c4;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -281,9 +337,9 @@
 }
 
 .header-logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #850e35;
 }
 
 .header-nav {
@@ -294,20 +350,26 @@
 }
 
 .header-link {
-  text-decoration: none; /* elimină underline */
-  font-weight: 500; /* păstrează o greutate moderată */
+  text-decoration: none;
+  /* elimină underline */
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #850e35;
+  /* păstrează o greutate moderată */
 }
 
 .header-link:hover {
-  color: #3b82f6;
+  color: #ee6983;
 }
 
 /* ------------------------------------- */
+
 /* --------------- FOOTER -------------- */
+
 /* ------------------------------------- */
 
 .footer-container {
-  background-color: #f3f4f6;
+  background-color: #ffc4c4;
   border-top: 1px solid #d1d5db;
   padding: 0.75rem 1.25rem;
 }
@@ -317,11 +379,13 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  color: #4b5563;
+  color: #000;
 }
 
 /* ------------------------------------- */
+
 /* ----------- RESERVATION MODAL ------- */
+
 /* ------------------------------------- */
 
 .modal-overlay {
@@ -389,9 +453,11 @@
   outline: none;
   transition: box-shadow 0.2s ease-in-out;
 }
+
 .modal-input {
   width: 100%;
-  min-width: 100%; /* 👈 face dropdown-ul la fel de lung ca inputurile */
+  min-width: 100%;
+  /* 👈 face dropdown-ul la fel de lung ca inputurile */
 }
 
 .modal-input:focus {
@@ -443,19 +509,24 @@
 .modal-check {
   width: 3rem;
   height: 3rem;
-  color: #22c55e; /* text-green-500 */
+  color: #22c55e;
+  /* text-green-500 */
   margin-bottom: 1rem;
   animation: bounce 2s infinite;
 }
 
 .modal-confirm-text {
-  color: #16a34a; /* text-green-600 */
+  color: #16a34a;
+  /* text-green-600 */
   font-weight: 700;
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
+  /* text-lg */
 }
 
 /* ------------------------------------- */
+
 /* ------------- GENERAL LAYOUT -------- */
+
 /* ------------------------------------- */
 
 .app-content {
@@ -463,18 +534,20 @@
 }
 
 /* Animation @keyframes for bounce */
+
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-1rem);
   }
 }
+
 .despre-benefits-box {
-  background-color: #eff6ff; 
-  border-left: 4px solid #3b82f6;
+  background-color: #eff6ff;
+  border-left: 4px solid #850e35;
   padding: 1.5rem;
   border-radius: 1rem;
   margin: 2rem 0;
@@ -483,7 +556,7 @@
 .despre-benefits-title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #850e35;
   margin-bottom: 1rem;
 }
 
@@ -495,7 +568,7 @@
 }
 
 .despre-benefits-list li strong {
-  color: #1d4ed8;
+  color: #850e35;
 }
 
 /* ---- NEW MODERN MODAL STYLE ---- */
@@ -505,9 +578,10 @@
   backdrop-filter: blur(12px);
   border-radius: 24px;
   padding: 2rem;
-  width: 32rem;              /* 👉 mai mare decât înainte */
+  width: 32rem;
+  /* 👉 mai mare decât înainte */
   max-width: 90vw;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   transform-origin: center;
   transition: 0.3s ease;
 }
@@ -522,17 +596,16 @@
   opacity: 0;
 }
 
-
 .modal-title-modern {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #2563eb;
+  color: #850e35;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .modal-title-modern span {
-  color: #1e3a8a;
+  color: #850e35;
 }
 
 .modal-field {
@@ -547,7 +620,8 @@
 }
 
 .modal-input-modern {
-  width: 100%;               /* 👉 ocupă toată lățimea cardului */
+  width: 100%;
+  /* 👉 ocupă toată lățimea cardului */
   box-sizing: border-box;
   padding: 0.6rem 0.8rem;
   border: 1px solid #d1d5db;
@@ -558,11 +632,12 @@
 }
 
 .modal-input-modern:focus {
-  border-color: #2563eb;
+  border-color: #850e35;
   box-shadow: 0 0 0 2px #bfdbfe;
 }
 
 /* Buttons */
+
 .modal-buttons-new {
   display: flex;
   justify-content: space-between;
@@ -585,7 +660,7 @@
 .btn-confirm-new {
   padding: 0.6rem 1rem;
   border-radius: 10px;
-  background: #2563eb;
+  background: #ee6983;
   color: white;
   font-weight: 700;
   cursor: pointer;
@@ -593,10 +668,11 @@
 }
 
 .btn-confirm-new:hover {
-  background: #1d4ed8;
+  background: #850e35;
 }
 
 /* Confirm screen */
+
 .modal-confirm-wrapper-new {
   text-align: center;
   padding: 2rem 1rem;
@@ -627,7 +703,24 @@
 }
 
 @keyframes popIn {
-  0% { transform: scale(0); }
-  80% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo-img {
+  width: 125px;
+  height: 125px;
 }
